@@ -1,0 +1,70 @@
+/*
+    TODO: add company styles
+*/
+
+.demo {
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.wrap {
+    width: 500px;
+}
+
+.select {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+.select-value {
+    border: 1px solid bisque;
+    border-radius: 5px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.select.open .select-dropdown {
+    display: block;
+}
+
+.select.open .select-value {
+    border-bottom: none;
+}
+
+.select-dropdown {
+    display: none;
+    max-height: 200px;
+    top: 40px;
+    left: 0;
+    right: 0;
+    border: 1px solid bisque;
+    border-radius: 5px;
+    position: absolute;
+    overflow-y: auto;
+}
+
+.select-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.select-item {
+    padding: 1rem;
+    border-bottom: 1px solid bisque;
+}
+
+.select-item:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+    transition: .10s background-color ease-in;
+}
+
+.select-item.selected {
+    background-color: blanchedalmond;
+}
