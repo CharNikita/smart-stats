@@ -3,7 +3,7 @@ import {Modal} from './source/modal.js';
 
 const modal = new Modal('#modal', {
     title: "title",
-    closable: false,
+    closable: true,
 });
 
 modal.open()

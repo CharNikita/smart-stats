@@ -4,6 +4,7 @@ export class Modal {
         this.options = options;
         this.element = document.querySelector(selector);
 
+        this.#setup();
         this.#render();
     };
 
@@ -28,7 +29,11 @@ export class Modal {
     };
 
     #setup() {
-
+        this.element.addEventListener('click', event => {
+            if (event.target.dataset.close) {
+                this.close();
+            }
+        })
     };
 
     #render() {
@@ -37,11 +42,11 @@ export class Modal {
     };
 
     #getModalTemplate() {
-        return `<div class="modal-overlay">
+        return `<div class="modal-overlay" data-close="true">
                 <div class="modal-window">
                     <div class="modal-header">
-                        <span class="modal-title">${this.options ?? 'Title'}</span>
-                        ${this.options.closable ? `<span class="modal-close">&times;</span>` : ''}
+                        <span class="modal-title">${this.options.title ?? 'Title'}</span>
+                        ${this.options.closable ? `<span class="modal-close" data-close="true">&times;</span>` : ''}
                     </div>
                     <div class="modal-body">
                         
